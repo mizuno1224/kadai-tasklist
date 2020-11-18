@@ -32,6 +32,8 @@ class TasksController < ApplicationController
 
     if @task.update(task_params)
       flash[:success] = 'タスクは正常に更新されました'
+      
+      # @taskには個別のidが入り、showに移動する
       redirect_to @task
     else
       flash.now[:danger] = 'タスクは更新されませんでした'
